@@ -1,0 +1,4 @@
+##gff-version 3
+#source-version geneious 2019.1.1
+# sequence-region	MT903344_oneITR	1	190802
+MT903344_oneITR	Geneious	CDS	32655	33773	.	-	.	ID=cds-F13L
