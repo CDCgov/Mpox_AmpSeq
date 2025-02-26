@@ -1,4 +1,4 @@
-# nf-core/TPOXX_AmpSeq: Citations
+# nf-core/Mpox_AmpSeq: Citations
 
 ## [nf-core](https://pubmed.ncbi.nlm.nih.gov/32055031/)
 

@@ -1,11 +1,11 @@
 #!/usr/bin/env nextflow
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    nf-core/TPOXX_AmpSeq
+    nf-core/Mpox_AmpSeq
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Github : https://github.com/nf-core/TPOXX_AmpSeq
-    Website: https://nf-co.re/TPOXX_AmpSeq
-    Slack  : https://nfcore.slack.com/channels/TPOXX_AmpSeq
+    Github : https://github.com/nf-core/Mpox_AmpSeq
+    Website: https://nf-co.re/Mpox_AmpSeq
+    Slack  : https://nfcore.slack.com/channels/Mpox_AmpSeq
 ----------------------------------------------------------------------------------------
 */
 
@@ -52,10 +52,10 @@ WorkflowMain.initialise(workflow, params, log, args)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { MPOXAMP } from './workflows/TPOXX_AmpSeq'
+include { MPOXAMP } from './workflows/Mpox_AmpSeq'
 
 //
-// WORKFLOW: Run main nf-core/TPOXX_AmpSeq analysis pipeline
+// WORKFLOW: Run main nf-core/Mpox_AmpSeq analysis pipeline
 //
 workflow NFCORE_MPOXAMP {
     MPOXAMP ()

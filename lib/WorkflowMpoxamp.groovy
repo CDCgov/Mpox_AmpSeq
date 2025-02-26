@@ -1,5 +1,5 @@
 //
-// This file holds several functions specific to the workflow/TPOXX_AmpSeq.nf in the nf-core/TPOXX_AmpSeq pipeline
+// This file holds several functions specific to the workflow/Mpox_AmpSeq.nf in the nf-core/Mpox_AmpSeq pipeline
 //
 
 import nextflow.Nextflow

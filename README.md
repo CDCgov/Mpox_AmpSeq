@@ -1,23 +1,23 @@
 <h1>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/nf-core-TPOXX_AmpSeq_logo_dark.png">
-    <img alt="nf-core/TPOXX_AmpSeq" src="docs/images/nf-core-TPOXX_AmpSeq_logo_light.png">
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/nf-core-Mpox_AmpSeq_logo_dark.png">
+    <img alt="nf-core/Mpox_AmpSeq" src="docs/images/nf-core-Mpox_AmpSeq_logo_light.png">
   </picture>
 </h1>
-[![GitHub Actions CI Status](https://github.com/nf-core/TPOXX_AmpSeq/workflows/nf-core%20CI/badge.svg)](https://github.com/nf-core/TPOXX_AmpSeq/actions?query=workflow%3A%22nf-core+CI%22)
-[![GitHub Actions Linting Status](https://github.com/nf-core/TPOXX_AmpSeq/workflows/nf-core%20linting/badge.svg)](https://github.com/nf-core/TPOXX_AmpSeq/actions?query=workflow%3A%22nf-core+linting%22)[![AWS CI](https://img.shields.io/badge/CI%20tests-full%20size-FF9900?labelColor=000000&logo=Amazon%20AWS)](https://nf-co.re/TPOXX_AmpSeq/results)[![Cite with Zenodo](http://img.shields.io/badge/DOI-10.5281/zenodo.XXXXXXX-1073c8?labelColor=000000)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![GitHub Actions CI Status](https://github.com/nf-core/Mpox_AmpSeq/workflows/nf-core%20CI/badge.svg)](https://github.com/nf-core/Mpox_AmpSeq/actions?query=workflow%3A%22nf-core+CI%22)
+[![GitHub Actions Linting Status](https://github.com/nf-core/Mpox_AmpSeq/workflows/nf-core%20linting/badge.svg)](https://github.com/nf-core/Mpox_AmpSeq/actions?query=workflow%3A%22nf-core+linting%22)[![AWS CI](https://img.shields.io/badge/CI%20tests-full%20size-FF9900?labelColor=000000&logo=Amazon%20AWS)](https://nf-co.re/Mpox_AmpSeq/results)[![Cite with Zenodo](http://img.shields.io/badge/DOI-10.5281/zenodo.XXXXXXX-1073c8?labelColor=000000)](https://doi.org/10.5281/zenodo.XXXXXXX)
 
 [![Nextflow](https://img.shields.io/badge/nextflow%20DSL2-%E2%89%A523.04.0-23aa62.svg)](https://www.nextflow.io/)
 [![run with conda](http://img.shields.io/badge/run%20with-conda-3EB049?labelColor=000000&logo=anaconda)](https://docs.conda.io/en/latest/)
 [![run with docker](https://img.shields.io/badge/run%20with-docker-0db7ed?labelColor=000000&logo=docker)](https://www.docker.com/)
 [![run with singularity](https://img.shields.io/badge/run%20with-singularity-1d355c.svg?labelColor=000000)](https://sylabs.io/docs/)
-[![Launch on Nextflow Tower](https://img.shields.io/badge/Launch%20%F0%9F%9A%80-Nextflow%20Tower-%234256e7)](https://tower.nf/launch?pipeline=https://github.com/nf-core/TPOXX_AmpSeq)
+[![Launch on Nextflow Tower](https://img.shields.io/badge/Launch%20%F0%9F%9A%80-Nextflow%20Tower-%234256e7)](https://tower.nf/launch?pipeline=https://github.com/nf-core/Mpox_AmpSeq)
 
-[![Get help on Slack](http://img.shields.io/badge/slack-nf--core%20%23TPOXX_AmpSeq-4A154B?labelColor=000000&logo=slack)](https://nfcore.slack.com/channels/TPOXX_AmpSeq)[![Follow on Twitter](http://img.shields.io/badge/twitter-%40nf__core-1DA1F2?labelColor=000000&logo=twitter)](https://twitter.com/nf_core)[![Follow on Mastodon](https://img.shields.io/badge/mastodon-nf__core-6364ff?labelColor=FFFFFF&logo=mastodon)](https://mstdn.science/@nf_core)[![Watch on YouTube](http://img.shields.io/badge/youtube-nf--core-FF0000?labelColor=000000&logo=youtube)](https://www.youtube.com/c/nf-core)
+[![Get help on Slack](http://img.shields.io/badge/slack-nf--core%20%23Mpox_AmpSeq-4A154B?labelColor=000000&logo=slack)](https://nfcore.slack.com/channels/Mpox_AmpSeq)[![Follow on Twitter](http://img.shields.io/badge/twitter-%40nf__core-1DA1F2?labelColor=000000&logo=twitter)](https://twitter.com/nf_core)[![Follow on Mastodon](https://img.shields.io/badge/mastodon-nf__core-6364ff?labelColor=FFFFFF&logo=mastodon)](https://mstdn.science/@nf_core)[![Watch on YouTube](http://img.shields.io/badge/youtube-nf--core-FF0000?labelColor=000000&logo=youtube)](https://www.youtube.com/c/nf-core)
 
 ## Introduction
 
-**nf-core/TPOXX_AmpSeq** is a bioinformatics analysis pipeline used for mpox F13L amplicon sequencing. It generates reference-assembled consensus sequences, variant reports, (['NextClade'](https://github.com/nextstrain/nextclade)) outputs including clade and lineage, and multiple quality control metrics. A schematic of general proccesses is below:
+**nf-core/Mpox_AmpSeq** is a bioinformatics analysis pipeline used for mpox F13L amplicon sequencing. It generates reference-assembled consensus sequences, variant reports, (['NextClade'](https://github.com/nextstrain/nextclade)) outputs including clade and lineage, and multiple quality control metrics. A schematic of general proccesses is below:
 
 <!-- Include the pipeline visualization graphic here -->
 ![Pipeline Visualization](/assets/visualization.svg)
@@ -44,7 +44,7 @@ General Pipeline Steps:
 
 Repository needs to be cloned using git clone
 
-	git clone https://git.biotech.cdc.gov/utx1/TPOXX_AmpSeq.git
+	git clone https://git.biotech.cdc.gov/utx1/Mpox_AmpSeq.git
 
 
 Your sample sheet should look something like this:
@@ -64,7 +64,7 @@ Now, you can run the pipeline using:
 
 
 ```bash
-nextflow run nf-core/TPOXX_AmpSeq \
+nextflow run nf-core/Mpox_AmpSeq \
    -profile <docker/singularity/.../institute> \
    --input samplesheet.csv \
    --outdir <OUTDIR> \
@@ -86,17 +86,17 @@ An additional script (/assets/table_summary.sh) can be ran in the nextflow outpu
 > Please provide pipeline parameters via the CLI or Nextflow `-params-file` option. Custom config files including those provided by the `-c` Nextflow option can be used to provide any configuration _**except for parameters**_;
 > see [docs](https://nf-co.re/usage/configuration#custom-configuration-files).
 
-For more details and further functionality, please refer to the [usage documentation](https://nf-co.re/TPOXX_AmpSeq/usage) and the [parameter documentation](https://nf-co.re/TPOXX_AmpSeq/parameters).
+For more details and further functionality, please refer to the [usage documentation](https://nf-co.re/Mpox_AmpSeq/usage) and the [parameter documentation](https://nf-co.re/Mpox_AmpSeq/parameters).
 
 ## Pipeline output
 
-To see the results of an example test run with a full size dataset refer to the [results](https://nf-co.re/TPOXX_AmpSeq/results) tab on the nf-core website pipeline page.
+To see the results of an example test run with a full size dataset refer to the [results](https://nf-co.re/Mpox_AmpSeq/results) tab on the nf-core website pipeline page.
 For more details about the output files and reports, please refer to the
-[output documentation](https://nf-co.re/TPOXX_AmpSeq/output).
+[output documentation](https://nf-co.re/Mpox_AmpSeq/output).
 
 ## Credits
 
-nf-core/TPOXX_AmpSeq was originally written by Daisy McGrath.
+nf-core/Mpox_AmpSeq was originally written by Daisy McGrath.
 
 We thank the following people for their extensive assistance in the development of this pipeline:
 
@@ -108,12 +108,12 @@ Crystal Gigante, PhD
 
 If you would like to contribute to this pipeline, please see the [contributing guidelines](.github/CONTRIBUTING.md).
 
-For further information or help, don't hesitate to get in touch on the [Slack `#TPOXX_AmpSeq` channel](https://nfcore.slack.com/channels/TPOXX_AmpSeq) (you can join with [this invite](https://nf-co.re/join/slack)).
+For further information or help, don't hesitate to get in touch on the [Slack `#Mpox_AmpSeq` channel](https://nfcore.slack.com/channels/Mpox_AmpSeq) (you can join with [this invite](https://nf-co.re/join/slack)).
 
 ## Citations
 
 <!-- TODO nf-core: Add citation for pipeline after first release. Uncomment lines below and update Zenodo doi and badge at the top of this file. -->
-<!-- If you use nf-core/TPOXX_AmpSeq for your analysis, please cite it using the following doi: [10.5281/zenodo.XXXXXX](https://doi.org/10.5281/zenodo.XXXXXX) -->
+<!-- If you use nf-core/Mpox_AmpSeq for your analysis, please cite it using the following doi: [10.5281/zenodo.XXXXXX](https://doi.org/10.5281/zenodo.XXXXXX) -->
 
 <!-- TODO nf-core: Add bibliography of tools and data used in your pipeline -->
 

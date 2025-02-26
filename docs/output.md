@@ -1,4 +1,4 @@
-# nf-core/TPOXX_AmpSeq: Output
+# nf-core/Mpox_AmpSeq: Output
 
 ## Introduction
 

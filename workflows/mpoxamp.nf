@@ -226,10 +226,12 @@ workflow MPOXAMP {
     // MODULE: Medaka
     //
    
-    MEDAKA (
+     if (params.run_medaka) {
+        MEDAKA (
         TRIMMOMATIC.out.trimmed_reads,
         IVAR_CONSENSUS.out.fasta
-    )
+     )
+     }
 
     ch_versions = ch_versions.mix(MEDAKA.out.versions.first())
 
@@ -241,21 +243,23 @@ workflow MPOXAMP {
     // MODULE: IVAR_VARIANTS & BCFTOOLS_INDEX (for indexing VCF file)
     //
 
-    IVAR_VARIANTS (
-        SAMTOOLS_SORT.out.bam,
-        params.fasta,
-        params.fai_file,
-        params.gff_file,
-        false
-    )
-
+    if (params.run_ivar_variants) {
+        IVAR_VARIANTS (
+            SAMTOOLS_SORT.out.bam,
+            params.fasta,
+            params.fai_file,
+            params.gff_file,
+            false
+        )
+    
+    }
     NEXTCLADE_DATASETGET (
         params.nextclade_dataset_name,
         []
     )
 
     NEXTCLADE_RUN (
-        MEDAKA.out.assembly,
+        IVAR_CONSENSUS.out.fasta,
         NEXTCLADE_DATASETGET.out.dataset
     )
 

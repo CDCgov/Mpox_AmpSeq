@@ -1,6 +1,6 @@
 {
-    "name": "nf-core/TPOXX_AmpSeq",
-    "homePage": "https://github.com/nf-core/TPOXX_AmpSeq",
+    "name": "nf-core/Mpox_AmpSeq",
+    "homePage": "https://github.com/nf-core/Mpox_AmpSeq",
     "repos": {
         "https://github.com/nf-core/modules.git": {
             "modules": {
