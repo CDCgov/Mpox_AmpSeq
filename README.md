@@ -1,19 +1,20 @@
-<h1>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/nf-core-Mpox_AmpSeq_logo_dark.png">
-    <img alt="nf-core/Mpox_AmpSeq" src="docs/images/nf-core-Mpox_AmpSeq_logo_light.png">
-  </picture>
-</h1>
-[![GitHub Actions CI Status](https://github.com/nf-core/Mpox_AmpSeq/workflows/nf-core%20CI/badge.svg)](https://github.com/nf-core/Mpox_AmpSeq/actions?query=workflow%3A%22nf-core+CI%22)
-[![GitHub Actions Linting Status](https://github.com/nf-core/Mpox_AmpSeq/workflows/nf-core%20linting/badge.svg)](https://github.com/nf-core/Mpox_AmpSeq/actions?query=workflow%3A%22nf-core+linting%22)[![AWS CI](https://img.shields.io/badge/CI%20tests-full%20size-FF9900?labelColor=000000&logo=Amazon%20AWS)](https://nf-co.re/Mpox_AmpSeq/results)[![Cite with Zenodo](http://img.shields.io/badge/DOI-10.5281/zenodo.XXXXXXX-1073c8?labelColor=000000)](https://doi.org/10.5281/zenodo.XXXXXXX)
+**General disclaimer** This repository was created for use by CDC programs to collaborate on public health related projects in support of the [CDC mission](https://www.cdc.gov/about/divisions-offices/index.html).  GitHub is not hosted by the CDC, but is a third party website used by CDC and its partners to share information and collaborate on software. CDC use of GitHub does not imply an endorsement of any one particular service, product, or enterprise. 
+
+## Privacy Standard Notice
+This repository contains only non-sensitive, publicly available data and
+information. All material and community participation is covered by the
+[Disclaimer](DISCLAIMER.md)
+and [Code of Conduct](code-of-conduct.md).
+For more information about CDC's privacy policy, please visit [http://www.cdc.gov/other/privacy.html](https://www.cdc.gov/other/privacy.html).
+
+Full disclaimer can be found at the end of this file.
+
 
 [![Nextflow](https://img.shields.io/badge/nextflow%20DSL2-%E2%89%A523.04.0-23aa62.svg)](https://www.nextflow.io/)
 [![run with conda](http://img.shields.io/badge/run%20with-conda-3EB049?labelColor=000000&logo=anaconda)](https://docs.conda.io/en/latest/)
 [![run with docker](https://img.shields.io/badge/run%20with-docker-0db7ed?labelColor=000000&logo=docker)](https://www.docker.com/)
 [![run with singularity](https://img.shields.io/badge/run%20with-singularity-1d355c.svg?labelColor=000000)](https://sylabs.io/docs/)
 [![Launch on Nextflow Tower](https://img.shields.io/badge/Launch%20%F0%9F%9A%80-Nextflow%20Tower-%234256e7)](https://tower.nf/launch?pipeline=https://github.com/nf-core/Mpox_AmpSeq)
-
-[![Get help on Slack](http://img.shields.io/badge/slack-nf--core%20%23Mpox_AmpSeq-4A154B?labelColor=000000&logo=slack)](https://nfcore.slack.com/channels/Mpox_AmpSeq)[![Follow on Twitter](http://img.shields.io/badge/twitter-%40nf__core-1DA1F2?labelColor=000000&logo=twitter)](https://twitter.com/nf_core)[![Follow on Mastodon](https://img.shields.io/badge/mastodon-nf__core-6364ff?labelColor=FFFFFF&logo=mastodon)](https://mstdn.science/@nf_core)[![Watch on YouTube](http://img.shields.io/badge/youtube-nf--core-FF0000?labelColor=000000&logo=youtube)](https://www.youtube.com/c/nf-core)
 
 ## Introduction
 
@@ -42,22 +43,25 @@ General Pipeline Steps:
 > [!NOTE]
 > If you are new to Nextflow and nf-core, please refer to [this page](https://nf-co.re/docs/usage/installation) on how to set-up Nextflow. Make sure to [test your setup](https://nf-co.re/docs/usage/introduction#how-to-run-a-pipeline) with `-profile test` before running the workflow on actual data.
 
-Repository needs to be cloned using git clone
+Repository can be cloned using git clone.
 
-	git clone https://git.biotech.cdc.gov/utx1/Mpox_AmpSeq.git
+	git clone https://git.biotech.cdc.gov/utx1/TPOXX_AmpSeq.git
 
 
-Your sample sheet should look something like this:
+ Prepare a samplesheet with your input data containing single-end ONT fastq files:
 
 `samplesheet.csv`:
 
 ```csv
 sample,fastq_1,fastq_2
-CONTROL_REP1,AEG588A1_S1_L002_R1_001.fastq.gz,AEG588A1_S1_L002_R2_001.fastq.gz
-CONTROL_REP2,AEG589A2_MERGED.fastq
+SAMPLE_NAME_1,RANDOM_NAME_S1_L002_R1_001.fastq.gz,
 ```
+A script is available to concatenate barcoded FASTQ files in a directory and generate a samplesheet in the required input format. You can find this script in `/assets/ont_fastq_concat_and_samplesheet_create.sh`. Ensure you’re in the working directory where you’d like the files merged and saved, as the script will automatically create a directory to store the resulting files, placing the samplesheet file in the same directory. Make sure to enter the path to the directory with the FASTQ files, ending with a "/" symbol.
 
-A script is available to create a samplesheet in the required format in /assets/samplesheet.sh. Run it in the working directory with FASTQ files, ending with a "/" symbol. This script assumes all reads have already been basecalled. 
+If your FASTQ files are already concatenated by barcode, you can generate only the samplesheet by running `/assets/create_samplesheet_only.sh`. Enter the path to the directory with concatenated FASTQ files, ending with a "/", and ensure you are in the working directory where you want to save the samplesheet.
+
+>[!WARNING]
+Avoid using special characters (parentheses, commas, asterisks, hashes, etc.) in FASTQ file names. Only use letters, numbers, underscores (_), and hyphens (-) for better compatibility with the workflow and to avoid unexpected crashes of the runs.
 
 
 Now, you can run the pipeline using:
@@ -86,38 +90,33 @@ An additional script (/assets/table_summary.sh) can be ran in the nextflow outpu
 > Please provide pipeline parameters via the CLI or Nextflow `-params-file` option. Custom config files including those provided by the `-c` Nextflow option can be used to provide any configuration _**except for parameters**_;
 > see [docs](https://nf-co.re/usage/configuration#custom-configuration-files).
 
-For more details and further functionality, please refer to the [usage documentation](https://nf-co.re/Mpox_AmpSeq/usage) and the [parameter documentation](https://nf-co.re/Mpox_AmpSeq/parameters).
+For more details and further functionality, please refer to the [usage documentation](https://nf-co.re/TPOXX_AmpSeq/usage) and the [parameter documentation](https://nf-co.re/TPOXX_AmpSeq/parameters).
 
 ## Pipeline output
 
-To see the results of an example test run with a full size dataset refer to the [results](https://nf-co.re/Mpox_AmpSeq/results) tab on the nf-core website pipeline page.
+To see the results of an example test run with a full size dataset refer to the [results](https://nf-co.re/TPOXX_AmpSeq/results) tab on the nf-core website pipeline page.
 For more details about the output files and reports, please refer to the
-[output documentation](https://nf-co.re/Mpox_AmpSeq/output).
+[output documentation](https://nf-co.re/TPOXX_AmpSeq/output).
 
 ## Credits
 
-nf-core/Mpox_AmpSeq was originally written by Daisy McGrath.
+nf-core/TPOXX_AmpSeq was originally written by Daisy McGrath.
 
 We thank the following people for their extensive assistance in the development of this pipeline:
 
-Luis Haddock, PhD
+1. Crystal Gigante, PhD
+2. Luis Haddock, PhD
 
-Crystal Gigante, PhD
 
 ## Contributions and Support
 
 If you would like to contribute to this pipeline, please see the [contributing guidelines](.github/CONTRIBUTING.md).
 
-For further information or help, don't hesitate to get in touch on the [Slack `#Mpox_AmpSeq` channel](https://nfcore.slack.com/channels/Mpox_AmpSeq) (you can join with [this invite](https://nf-co.re/join/slack)).
-
 ## Citations
 
-<!-- TODO nf-core: Add citation for pipeline after first release. Uncomment lines below and update Zenodo doi and badge at the top of this file. -->
-<!-- If you use nf-core/Mpox_AmpSeq for your analysis, please cite it using the following doi: [10.5281/zenodo.XXXXXX](https://doi.org/10.5281/zenodo.XXXXXX) -->
-
-<!-- TODO nf-core: Add bibliography of tools and data used in your pipeline -->
-
 An extensive list of references for the tools used by the pipeline can be found in the [`CITATIONS.md`](CITATIONS.md) file.
+
+This pipeline uses code and infrastructure developed and maintained by the [nf-core](https://nf-co.re) community, reused here under the [MIT license](https://github.com/nf-core/tools/blob/master/LICENSE).
 
 You can cite the `nf-core` publication as follows:
 
