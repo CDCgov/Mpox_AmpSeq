@@ -18,7 +18,7 @@ Full disclaimer can be found at the end of this file.
 
 ## Introduction
 
-**Mpox_AmpSeq** is a bioinformatics analysis ([`nf-core`]https://nf-co.re/) style pipeline designed for F13L amplicon sequencing of mpox. The versatile tool geneerates reference-assisted consensus sequences, sequencing statistics, comprehensive (['NextClade'](https://github.com/nextstrain/nextclade)) outputs, including clade identification and relevant variant information., and multiple quality control metrics. Below is a schematic representation of the key processes involved: 
+**Mpox_AmpSeq** is a bioinformatics analysis ([`nf-core`]https://nf-co.re/) style pipeline designed for F13L amplicon sequencing of mpox. The versatile tool generates reference-assisted consensus sequences, sequencing statistics, comprehensive (['NextClade'](https://github.com/nextstrain/nextclade)) outputs, including clade identification and relevant variant information., and multiple quality control metrics. Below is a schematic representation of the key processes involved: 
 
 <!-- Include the pipeline visualization graphic here -->
 ![Pipeline Visualization](/assets/visualization.svg)
