@@ -81,10 +81,10 @@ nextflow run nf-core/Mpox_AmpSeq \
    --nextclade_dataset_name 'nextstrain/mpox/all-clades'
 ```
 
-Reference MT903344.1 is provided in /assets/genome/
+Reference MT903344.1 is provided in `/assets/genome/`.
 
-An additional script (/assets/table_summary.sh) can be ran in the nextflow output directory to generate a table of total read counts, mapped reads count, average coverage, and average read length. The script will also list all SNPs (any alternate frequncy) and indels (alternate frequency >50%) found in the (['IVAR variants'](https://github.com/andersen-lab/ivar)) report; it will detail the mutation with positions corresponding to the reference, the alternate amino acid change, the mutational frequency, and coverage at the mutation site. 
-
+An additional script `/assets/table_summary.sh` can be ran in the Nextflow output directory to generate a comprehensive summary table of sequencing metrics and mutations. The script integrates outputs from (['SAMTOOLS'](https://github.com/samtools/samtools)), (['NextClade'](https://github.com/nextstrain/nextclade)), and (['IVAR variants'](https://github.com/andersen-lab/ivar)), if available, to output a table with read statistics (total reads, mapped reads, average coverage, and average read length) and mutations (amino acid substitutions and indels) per sample. Final table is output in `/summary_stats` directory.
+Please note, clade assignments might not be fully accurate as the targetted amplicon region does not provide complete genomic information. 
 
 > [!WARNING]
 > Please provide pipeline parameters via the CLI or Nextflow `-params-file` option. Custom config files including those provided by the `-c` Nextflow option can be used to provide any configuration _**except for parameters**_;
