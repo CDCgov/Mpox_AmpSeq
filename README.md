@@ -18,7 +18,7 @@ Full disclaimer can be found at the end of this file.
 
 ## Introduction
 
-**Mpox_AmpSeq** is a bioinformatics analysis ([`nf-core`]https://nf-co.re/) style pipeline designed for F13L amplicon sequencing of mpox. The versatile tool generates reference-assisted consensus sequences, sequencing statistics, comprehensive (['NextClade'](https://github.com/nextstrain/nextclade)) outputs, including clade identification and relevant variant information., and multiple quality control metrics. Below is a schematic representation of the key processes involved: 
+**Mpox_AmpSeq** is a bioinformatics analysis [`nf-core`](https://nf-co.re/) style pipeline designed for F13L amplicon sequencing of mpox. The versatile tool generates reference-assisted consensus sequences, sequencing statistics, comprehensive ['NextClade'](https://github.com/nextstrain/nextclade) outputs, including clade identification and relevant variant information., and multiple quality control metrics. Below is a schematic representation of the key processes involved: 
 
 <!-- Include the pipeline visualization graphic here -->
 ![Pipeline Visualization](/assets/visualization.svg)
@@ -28,15 +28,15 @@ Full disclaimer can be found at the end of this file.
 <!-- TODO nf-core: Fill in short bullet-pointed list of the default steps in the pipeline -->
 
 General Pipeline Steps:
-1. Read QC ([`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)).
-2. Trim primers with (['SEQTK'](https://github.com/lh3/seqtk)).
-3. Trim and filter raw reads with (['TRIMMOMATIC'](https://github.com/usadellab/Trimmomatic)).
-4. Map raw reads to reference using (['Minimap2'](https://github.com/lh3/minimap2)) to generate a reference-based consensus with (['IVAR consensus'](https://github.com/andersen-lab/ivar)).  
-5. Generate alignment files and coverage information with (['SAMTOOLS'](https://github.com/samtools/samtools)). 
-6. Optional: Polish (['IVAR consensus'](https://github.com/andersen-lab/ivar)) with (['MEDAKA'](https://github.com/nanoporetech/medaka)). 
-7. Optional: Generate a variant table with (['IVAR variants'](https://github.com/andersen-lab/ivar)).
-8. Generate clade assignment, variant information, phylogenetic placement, and additional quality control statistics with (['NextClade'](https://github.com/nextstrain/nextclade)).
-2. Generate QC for raw reads ([`MultiQC`](http://multiqc.info/))
+1. Read QC via [`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/).
+2. Trim primers with ['SEQTK'](https://github.com/lh3/seqtk).
+3. Trim and filter raw reads with ['TRIMMOMATIC'](https://github.com/usadellab/Trimmomatic).
+4. Map raw reads to reference using ['Minimap2'](https://github.com/lh3/minimap2) to generate a reference-based consensus with ['IVAR consensus'](https://github.com/andersen-lab/ivar).  
+5. Generate alignment files and coverage information with ['SAMTOOLS'](https://github.com/samtools/samtools). 
+6. Optional: Polish ['IVAR consensus'](https://github.com/andersen-lab/ivar) with ['MEDAKA'](https://github.com/nanoporetech/medaka). 
+7. Optional: Generate a variant table with ['IVAR variants'](https://github.com/andersen-lab/ivar).
+8. Generate clade assignment, variant information, phylogenetic placement, and additional quality control statistics with ['NextClade'](https://github.com/nextstrain/nextclade).
+2. Generate QC for raw reads [`MultiQC`](http://multiqc.info/).
 
 ## Usage
 
@@ -83,7 +83,7 @@ nextflow run nf-core/Mpox_AmpSeq \
 
 Reference MT903344.1 is provided in `/assets/genome/`.
 
-An additional script `/assets/table_summary.sh` can be ran in the Nextflow output directory to generate a comprehensive summary table of sequencing metrics and mutations. The script integrates outputs from (['SAMTOOLS'](https://github.com/samtools/samtools)), (['NextClade'](https://github.com/nextstrain/nextclade)), and (['IVAR variants'](https://github.com/andersen-lab/ivar)), if available, to output a table with read statistics (total reads, mapped reads, average coverage, and average read length) and mutations (amino acid substitutions and indels) per sample. Final table is output in `/summary_stats` directory.
+An additional script `/assets/table_summary.sh` can be ran in the Nextflow output directory to generate a comprehensive summary table of sequencing metrics and mutations. The script integrates outputs from ['SAMTOOLS'](https://github.com/samtools/samtools), ['NextClade'](https://github.com/nextstrain/nextclade), and ['IVAR variants'](https://github.com/andersen-lab/ivar), if available, to output a table with read statistics (total reads, mapped reads, average coverage, and average read length) and mutations (amino acid substitutions and indels) per sample. Final table is output in `/summary_stats` directory.
 Please note, clade assignments might not be fully accurate as the targetted amplicon region does not provide complete genomic information. 
 
 > [!WARNING]
