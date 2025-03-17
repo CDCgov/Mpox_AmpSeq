@@ -83,6 +83,10 @@ nextflow run nf-core/Mpox_AmpSeq \
 
 Reference MT903344.1 is provided in `/assets/genome/`.
 
+> [!WARNING]
+> NextClade clade and lineage assignments may vary in accuracy when compared to whole-genome sequencing. The target region alone does not provide sufficient resolution to reliably differentiate clades and lineages.
+
+
 An additional script `/assets/table_summary.sh` can be ran in the Nextflow output directory to generate a comprehensive summary table of sequencing metrics and mutations. The script integrates outputs from ['SAMTOOLS'](https://github.com/samtools/samtools), ['NextClade'](https://github.com/nextstrain/nextclade), and ['IVAR variants'](https://github.com/andersen-lab/ivar), if available, to output a table with read statistics (total reads, mapped reads, average coverage, and average read length) and mutations (amino acid substitutions and indels) per sample. Final table is output in `/summary_stats` directory.
 Please note, clade assignments might not be fully accurate as the targetted amplicon region does not provide complete genomic information. 
 
@@ -92,11 +96,6 @@ Please note, clade assignments might not be fully accurate as the targetted ampl
 
 For more details and further functionality, please refer to the [usage documentation](https://nf-co.re/TPOXX_AmpSeq/usage) and the [parameter documentation](https://nf-co.re/TPOXX_AmpSeq/parameters).
 
-## Pipeline output
-
-To see the results of an example test run with a full size dataset refer to the [results](https://nf-co.re/TPOXX_AmpSeq/results) tab on the nf-core website pipeline page.
-For more details about the output files and reports, please refer to the
-[output documentation](https://nf-co.re/TPOXX_AmpSeq/output).
 
 ## Credits
 
