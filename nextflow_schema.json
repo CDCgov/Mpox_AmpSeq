@@ -294,6 +294,7 @@
         },
         "cloudProcess": {
             "type": "boolean"
+        },
         "genome": {
             "type": "string"
         },
