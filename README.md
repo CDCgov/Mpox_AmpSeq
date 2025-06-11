@@ -88,9 +88,25 @@ Reference MT903344.1 is provided in `/assets/genome/`.
 > [!WARNING]
 > NextClade clade and lineage assignments may vary in accuracy when compared to whole-genome sequencing. The target region alone does not provide sufficient resolution to reliably differentiate clades and lineages.
 
+Post-processing Scripts:
 
-An additional script `/assets/table_summary.sh` can be ran in the Nextflow output directory to generate a comprehensive summary table of sequencing metrics and mutations. The script integrates outputs from ['SAMTOOLS'](https://github.com/samtools/samtools), ['NextClade'](https://github.com/nextstrain/nextclade), and ['IVAR variants'](https://github.com/andersen-lab/ivar), if available, to output a table with read statistics (total reads, mapped reads, average coverage, and average read length) and mutations (amino acid substitutions and indels) per sample. Final table is output in `/summary_stats` directory.
-Please note, clade assignments might not be fully accurate as the targetted amplicon region does not provide complete genomic information. 
+Two additional scripts are available in the `/assets/` directory to help summarize and analyze your results after the Nextflow pipeline completes. These should be run from within your Nextflow output directory.
+
+1. `/assets/table_summary.sh`:
+This script generates a comprehensive summary table of sequencing metrics and Nextclade mutation information. It integrates outputs from SAMTOOLS and 'NextClade' to output a table with read statistics (total reads, mapped reads, average coverage, and average read length), and Nextclade-specific details including nucleotide and amino acid substitutions, as well as nucleotide and amino acid deletions, clade assignment, and Nextclade's overall coverage. The final table is output in the `./summary_stats` directory.
+
+Usage:
+```bash
+/path/to/Mpox_AmpSeq/assets/table_summary.sh
+```
+
+2. `/assets/match_mutations.sh`:
+This script performs a targeted analysis by cross-referencing the amino acid substitutions identified by Nextclade against a custom mutation database. It requires your mutation database to be provided as a tab-separated file named mutation_database.tsv within the /assets/ directory. For each sample, if a Nextclade amino acid substitution matches an entry in your database, the script will report the sample name, the Nextclade amino acid substitution, and all corresponding details from your database (Mutation, AminoAcid, TotalCount, APOBEC3_Context). The report is saved to `./summary_stats/matched_mutations_report.tsv`.
+
+Usage:
+```bash
+/path/to/Mpox_AmpSeq/assets/match_mutations.sh
+```
 
 > [!WARNING]
 > Please provide pipeline parameters via the CLI or Nextflow `-params-file` option. Custom config files including those provided by the `-c` Nextflow option can be used to provide any configuration _**except for parameters**_;
