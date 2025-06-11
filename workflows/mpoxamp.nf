@@ -233,7 +233,7 @@ workflow MPOXAMP {
      )
      }
 
-    ch_versions = ch_versions.mix(MEDAKA.out.versions.first())
+    //ch_versions = ch_versions.mix(MEDAKA.out.versions.first())
 
     //println "MEDAKA.out.assembly: ${MEDAKA.out.assembly == null ? 'null' : 'valid'}"
     //println "DEBUG: Type of MEDAKA.out.assembly: ${MEDAKA.out.assembly.getClass()}"

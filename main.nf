@@ -52,7 +52,7 @@ WorkflowMain.initialise(workflow, params, log, args)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { MPOXAMP } from './workflows/Mpox_AmpSeq'
+include { MPOXAMP } from './workflows/mpoxamp.nf'
 
 //
 // WORKFLOW: Run main nf-core/Mpox_AmpSeq analysis pipeline
