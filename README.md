@@ -119,12 +119,12 @@ For more details and further functionality, please refer to the [usage documenta
 
 ## Credits
 
-Mpox_AmpSeq was originally written by Daisy McGrath.
+Mpox_AmpSeq was originally written by [Daisy McGrath](https://github.com/daysmcgrath).
 
 We thank the following people for their extensive assistance in the development of this pipeline:
 
 1. Crystal Gigante, PhD
-2. Luis Haddock, PhD
+2. [Luis Haddock](https://github.com/haddocksoto), PhD
 
 
 ## Contributions and Support
