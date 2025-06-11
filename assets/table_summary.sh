@@ -4,7 +4,7 @@
 
 # Directories
 DEPTH_DIR="./samtools/depth"
-FLAGSTAT_DIR="./samtools"
+FLAGSTAT_DIR="./samtools/flagstat"
 STATS_DIR="./samtools/stats" 
 VARIANTS_DIR="./variants"
 NEXTCLADE_DIR="./nextclade/run" # Directory for Nextclade outputs
