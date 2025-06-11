@@ -97,6 +97,7 @@ This script generates a comprehensive summary table of sequencing metrics and Ne
 
 Usage:
 ```bash
+#In NextFlow output directory
 /path/to/Mpox_AmpSeq/assets/table_summary.sh
 ```
 
@@ -105,6 +106,7 @@ This script performs a targeted analysis by cross-referencing the amino acid sub
 
 Usage:
 ```bash
+#In NextFlow output directory
 /path/to/Mpox_AmpSeq/assets/match_mutations.sh
 ```
 

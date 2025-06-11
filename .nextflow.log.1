@@ -1,0 +1,84 @@
+Jun-11 07:36:13.279 [main] DEBUG nextflow.cli.Launcher - $> nextflow run ../Mpox_AmpSeq/main.nf    --input ./samplesheet.csv    -profile singularity    --outdir ./nextflow_output    --fasta /scicomp/home-pure/utx1/Mpox_AmpSeq/assets/genome/MT903344_oneITR.fasta    --bed_file /scicomp/home-pure/utx1/Mpox_AmpSeq/assets/genome/MT903344_oneITR.bed    --fai_file /scicomp/home-pure/utx1/Mpox_AmpSeq/assets/genome/MT903344_oneITR.fasta.fai    --gff_file /scicomp/home-pure/utx1/Mpox_AmpSeq/assets/genome/MT903344_oneITR.fasta.gff    --mmi_file /scicomp/home-pure/utx1/Mpox_AmpSeq/assets/genome/MT903344_oneITR.fasta.mmi    --nextclade_dataset_name nextstrain/mpox/all-clades
+Jun-11 07:36:13.343 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.04.3
+Jun-11 07:36:13.368 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/scicomp/home-pure/utx1/.nextflow/plugins; core-plugins: nf-amazon@1.16.2,nf-azure@1.0.1,nf-codecommit@0.1.4,nf-console@1.0.5,nf-ga4gh@1.0.5,nf-google@1.7.3,nf-tower@1.5.12,nf-wave@0.8.4
+Jun-11 07:36:13.382 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jun-11 07:36:13.384 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jun-11 07:36:13.388 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Jun-11 07:36:13.398 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jun-11 07:36:13.416 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /scicomp/home-pure/utx1/TUTORIAL_new/Mpox_AmpSeq/nextflow.config
+Jun-11 07:36:13.417 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /scicomp/home-pure/utx1/TUTORIAL_new/Mpox_AmpSeq/nextflow.config
+Jun-11 07:36:13.439 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `singularity`
+Jun-11 07:36:15.341 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [bih, cfc_dev, uzl_omics, ifb_core, embl_hd, denbi_qbic, alice, mjolnir_globe, uppmax, giga, incliva, ilifu, ki_luria, uge, icr_alma, rosalind_uge, lugh, mccleary, unibe_ibu, vai, czbiohub_aws, jax, roslin, tes, scw, unc_longleaf, tigem, tubingen_apg, google, apollo, ipop_up, vsc_calcua, pdc_kth, googlels, ceci_nic5, ccga_cau, humantechnopole, stjude, daisybio, eddie, medair, biowulf, apptainer, bi, bigpurple, adcra, cedars, pawsey_setonix, vsc_kul_uhasselt, pawsey_nimbus, ucl_myriad, utd_ganymede, charliecloud, seattlechildrens, icr_davros, ceres, munin, arm, rosalind, hasta, cfc, uzh, shu_bmrc, ebi_codon_slurm, ebc, ccga_dx, crick, ku_sund_danhead, marvin, biohpc_gen, shifter, mana, mamba, york_viking, unc_lccc, wehi, awsbatch, wustl_htcf, arcc, ceci_dragon2, imperial, maestro, software_license, cannon, genotoul, nci_gadi, abims, janelia, nu_genomics, googlebatch, oist, sahmri, kaust, alliance_canada, mpcdf, leicester, vsc_ugent, create, sage, cambridge, jex, podman, ebi_codon, cheaha, xanadu, nyu_hpc, test, marjorie, computerome, ucd_sonic, seg_globe, mssm, sanger, dkfz, bluebear, pasteur, einstein, ethz_euler, m3c, test_full, imb, ucl_cscluster, tuos_stanage, azurebatch, hki, seadragon, crukmi, csiro_petrichor, qmul_apocrita, docker, engaging, gis, hypatia, psmn, eva, unity, cropdiversityhpc, nygc, fgcz, conda, crg, singularity, mpcdf_viper, pe2, self_hosted_runner, tufts, uw_hyak_pedslabs, binac2, debug, genouest, cbe, unsw_katana, phoenix, gitpod, seawulf, uod_hpc, fub_curta, uct_hpc, aws_tower, binac, fsu_draco]
+Jun-11 07:36:15.391 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Jun-11 07:36:15.396 [main] INFO  nextflow.cli.CmdRun - Launching `../Mpox_AmpSeq/main.nf` [amazing_wright] DSL2 - revision: bcd264b04a
+Jun-11 07:36:15.397 [main] WARN  nextflow.plugin.PluginsFacade - Nextflow self-contained distribution allows only core plugins -- User config plugins will be ignored: nf-validation@1.1.3
+Jun-11 07:36:15.403 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /scicomp/home-pure/utx1/.nextflow/secrets/store.json
+Jun-11 07:36:15.406 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@e2b3026] - activable => nextflow.secret.LocalSecretsProvider@e2b3026
+Jun-11 07:36:15.481 [main] DEBUG nextflow.Session - Session UUID: cf422cbf-8eec-46aa-948f-bd00d5efad3a
+Jun-11 07:36:15.482 [main] DEBUG nextflow.Session - Run name: amazing_wright
+Jun-11 07:36:15.482 [main] DEBUG nextflow.Session - Executor pool size: 16
+Jun-11 07:36:15.496 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=48; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jun-11 07:36:15.525 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 23.04.3 build 5875
+  Created: 11-08-2023 18:37 UTC (14:37 EDT)
+  System: Linux 4.18.0-553.54.1.el8_10.x86_64
+  Runtime: Groovy 3.0.16 on OpenJDK 64-Bit Server VM 11.0.20+8
+  Encoding: UTF-8 (UTF-8)
+  Process: 243825@rosalind-007.hpc.biotech.cdc.gov [10.128.43.7]
+  CPUs: 16 - Mem: 187.5 GB (23.7 GB) - Swap: 8 GB (8 GB)
+Jun-11 07:36:15.564 [main] DEBUG nextflow.Session - Work-dir: /scicomp/scratch/utx1/nextflow/work [nfs]
+Jun-11 07:36:15.611 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[GoogleLifeSciencesExecutor, AwsBatchExecutor, GoogleBatchExecutor]
+Jun-11 07:36:15.626 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jun-11 07:36:15.657 [main] DEBUG nextflow.Session - Observer factory: TowerFactory
+Jun-11 07:36:15.703 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jun-11 07:36:15.717 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 17; maxThreads: 1000
+Jun-11 07:36:15.797 [main] DEBUG nextflow.Session - Session start
+Jun-11 07:36:15.803 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /scicomp/home-pure/utx1/TUTORIAL_new/Mpox_AmpSeq/nextflow_output/pipeline_info/execution_trace_2025-06-11_07-36-15.txt
+Jun-11 07:36:15.817 [main] DEBUG nextflow.Session - Using default localLib path: /scicomp/home-pure/utx1/TUTORIAL_new/Mpox_AmpSeq/lib
+Jun-11 07:36:15.821 [main] DEBUG nextflow.Session - Adding to the classpath library: /scicomp/home-pure/utx1/TUTORIAL_new/Mpox_AmpSeq/lib
+Jun-11 07:36:16.287 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jun-11 07:36:16.304 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-validation version: latest
+Jun-11 07:36:16.490 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-validation@1.1.4' resolved
+Jun-11 07:36:16.491 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-validation@1.1.4'
+Jun-11 07:36:16.500 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-validation@1.1.4
+Jun-11 07:36:16.501 [main] DEBUG nextflow.script.IncludeDef - Loading included plugin extensions with names: [validateParameters:validateParameters, paramsHelp:paramsHelp]; plugin Id: nf-validation
+Jun-11 07:36:16.528 [main] DEBUG nextflow.validation.SchemaValidator - Starting parameters validation
+Jun-11 07:36:16.657 [main] ERROR nextflow.validation.SchemaValidator - ERROR: Validation of pipeline parameters failed!
+Jun-11 07:36:16.666 [main] DEBUG nextflow.Session - Session aborted -- Cause: [0;31mThe following invalid input values have been detected:
+
+* --input: the file or directory './samplesheet.csv' does not exist.
+[0m
+
+Jun-11 07:36:16.682 [main] DEBUG nextflow.cli.Launcher - Operation aborted
+nextflow.validation.SchemaValidationException: [0;31mThe following invalid input values have been detected:
+
+* --input: the file or directory './samplesheet.csv' does not exist.
+[0m
+
+	at nextflow.validation.SchemaValidator.validateParameters(SchemaValidator.groovy:392)
+	at nextflow.validation.SchemaValidator.validateParameters(SchemaValidator.groovy)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at nextflow.script.FunctionDef.invoke_a(FunctionDef.groovy:64)
+	at nextflow.script.ComponentDef.invoke_o(ComponentDef.groovy:40)
+	at nextflow.script.WorkflowBinding.invokeMethod(WorkflowBinding.groovy:102)
+	at groovy.lang.GroovyObject$invokeMethod.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:148)
+	at nextflow.script.BaseScript.invokeMethod(BaseScript.groovy:141)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:68)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:176)
+	at Script_91e840e0.runScript(Script_91e840e0:44)
+	at nextflow.script.BaseScript.run0(BaseScript.groovy:145)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:192)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:229)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:224)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:130)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:368)
+	at nextflow.cli.Launcher.run(Launcher.groovy:494)
+	at nextflow.cli.Launcher.main(Launcher.groovy:653)
